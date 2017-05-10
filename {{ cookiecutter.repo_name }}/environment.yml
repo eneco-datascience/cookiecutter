@@ -1,0 +1,17 @@
+name: {{ cookiecutter.repo_name }}
+channels:
+ - conda-forge
+dependencies:
+ - findspark=1.0.0
+ - ipykernel=4.6.1
+ - jupyter_core=4.3.0
+ - python=3.6.1
+ - pandas=0.20.1
+ - scipy=0.19.0
+ - seaborn=0.7.1
+ - statsmodels=0.8.0
+ - numpy=1.12.1
+ - pip:
+    - bumpversion==0.5.3
+    - python-dotenv==0.6.4
+    - git+ssh://git@github.com/eneco-datascience/eneco.git@3c77fd08c271fffa4ce1370db4e4141fd90fb31d#egg=eneco

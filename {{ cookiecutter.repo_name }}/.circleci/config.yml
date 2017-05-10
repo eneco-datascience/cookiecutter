@@ -1,0 +1,16 @@
+version: 2.0
+jobs:
+  build:
+    working_directory: /root/eneco
+    docker:
+      - image: huib/eneco-pyspark:1.0.0
+        environment:
+            SPARK_HOME: /usr/hdp/current/spark2-client/
+    steps:
+      - checkout
+      - run:
+            name: Run tests
+            command: |
+                source /root/miniconda3/bin/activate eneco
+                pip install -e .
+                pytest
