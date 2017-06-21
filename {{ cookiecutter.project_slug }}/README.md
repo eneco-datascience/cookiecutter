@@ -8,9 +8,9 @@ To create a new environment from the file, run the following command from your D
     conda env create -f environment.yml
 
 You can now create notebooks in the `notebooks` directory from this environment, which is named after your project.
-However, your project code (in the `{{ cookiecutter.repo_name }}` directory is not yet available. The nicest way to install this package is by using pip (I could not get it to work in the `environment.yml` file:
+However, your project code (in the `{{ cookiecutter.project_slug }}` directory is not yet available. The nicest way to install this package is by using pip (I could not get it to work in the `environment.yml` file:
 
-    source activate {{ cookiecutter.repo_name }}
+    source activate {{ cookiecutter.project_slug }}
     pip install -e .
 
 This will install an editable version of your code in your virtual environment. You can now edit your code without having to reinstall the package every time, and you don't need to mess with your path.
@@ -22,7 +22,7 @@ To use the `dotenv` package, add a new `.env` file to your project (this file wi
 
     SECRET=value
 
-In `{{ cookiecutter.repo_name }}/settings.py`, you will find the following lines:
+In `{{ cookiecutter.project_slug }}/settings.py`, you will find the following lines:
 
     from dotenv import load_dotenv, find_dotenv
     load_dotenv(find_dotenv())
