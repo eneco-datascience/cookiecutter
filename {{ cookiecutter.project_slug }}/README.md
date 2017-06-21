@@ -8,6 +8,12 @@ To create a new environment from the file, run the following command from your D
     conda env create -f environment.yml
 
 You can now create notebooks in the `notebooks` directory from this environment, which is named after your project.
+However, your project code (in the `{{ cookiecutter.repo_name }}` directory is not yet available. The nicest way to install this package is by using pip (I could not get it to work in the `environment.yml` file:
+
+    source activate {{ cookiecutter.repo_name }}
+    pip install -e .
+
+This will install an editable version of your code in your virtual environment. You can now edit your code without having to reinstall the package every time, and you don't need to mess with your path.
 
 ## Working with secrets
 Storing secrets in git is **bad**. Real bad. To counter this, the [dotenv](https://github.com/theskumar/python-dotenv) package is present in your environment.
