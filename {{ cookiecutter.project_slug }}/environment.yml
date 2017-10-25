@@ -14,4 +14,3 @@ dependencies:
  - pip:
     - bumpversion==0.5.3
     - python-dotenv==0.6.4
-    - git+ssh://git@github.com/eneco-datascience/eneco.git@3c77fd08c271fffa4ce1370db4e4141fd90fb31d#egg=eneco
